@@ -1,29 +1,35 @@
 import { FC, useState } from 'react';
 import { Route, Routes } from 'react-router';
 
-import Header from './components/layout/header/Header';
+import AppContext from './hooks/useContext';
 
-import './App.css';
-import About from './components/pages/about/About';
+import Header from './components/layout/header/Header';
+import Home from './components/pages/home/Home';
 import Footer from './components/layout/footer/Footer';
 import Quotes from './components/pages/quotes/Quotes';
 
+import './App.css';
+
+
 const App: FC = () => {
-   const [activePage, setActivePage] = useState<string>('about');
+   const [activePage, setActivePage] = useState<string>('');
 
    return (
-      <div className="App">
-         <Header activePage={activePage} />
+      <AppContext.Provider value>
+         <div className="App">
+            <Header activePage={activePage} />
 
-         <div className="main">
-            <Routes>
-               <Route path="/" element={<About setActivePage={(page) => setActivePage(page)} />} />
-               <Route path="/catalog" element={<Quotes setActivePage={(page) => setActivePage(page)} />} />
-            </Routes>
+            <main>
+               <Routes>
+                  <Route path="/" element={<Home setActivePage={(page) => setActivePage(page)} />} />
+                  <Route path="/quotes" element={<Quotes setActivePage={(page) => setActivePage(page)} />} />
+                  <Route path="*" element={<>page not found</>} />
+               </Routes>
+            </main>
+
+            <Footer />
          </div>
-
-         <Footer />
-      </div>
+      </AppContext.Provider>
    );
 };
 
