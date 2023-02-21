@@ -1,0 +1,54 @@
+@import '../../../assets/_variables';
+
+header {
+   height: 70px;
+   background-color: #20232a;
+
+   .container {
+      margin: 0 auto;
+      max-width: 1000px;
+      height: 100%;
+
+      display: flex;
+      align-items: center;
+      gap: 10%;
+
+      .logo {
+         padding: 0 2% 0 2%;
+         height: 100%;
+
+         display: flex;
+    
+         text-align: center;
+         justify-content: center;
+         align-items: center;
+
+         background-color: #282c34;
+
+         h2 {
+            // background: linear-gradient(to right, $third, rgb(255, 255, 255));
+            color: $third;
+         }
+      }
+   }
+
+   nav {
+      ul {
+         padding: none;
+
+         display: flex;
+         align-items: center;
+         gap: 50%; 
+
+         list-style: none;
+
+         li {
+            a {
+               font-size: 16px;
+               color: rgb(255, 255, 255);
+               text-decoration: none;
+            }
+         }
+      }
+   }
+}

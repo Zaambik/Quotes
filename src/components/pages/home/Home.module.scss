@@ -1,0 +1,64 @@
+@import '../../../assets/_variables';
+
+.container {
+   margin: 0 auto;
+   max-width: 1000px;
+
+   display: grid;
+   grid-template-columns: 1fr;
+
+   .text {
+      padding-top: 40px;
+      display: grid;
+      grid-template-columns: 1fr;
+      justify-items: center;
+      gap: 40px;
+
+      h2 {
+         color: white;
+         font-size: 26px;
+      }
+
+      p {
+         color: white;
+         font-size: 20px;
+      }
+
+      a {
+         height: 50px;
+         width: 140px;
+
+         display: flex;
+         justify-content: center;
+         align-items: center;
+
+         text-decoration: none;
+         font-size: 18px;
+
+         color: rgb(255, 255, 255);
+         background-color: $third;
+         border-radius: 20px;
+
+         transition: all 0.2s ease-in-out; ;
+
+         &:hover {
+            background-color: $third-hover;
+         }
+      }
+   }
+
+   .img {
+      padding-top: 20px;
+      padding-bottom: 40px;
+      display: grid;
+      grid-template-columns: 1fr;
+      justify-items: center;
+      gap: 40px;
+
+      img {
+         width: 70%;
+         border-radius: 50px;
+         filter: grayscale(100%);
+      }
+   }
+}
