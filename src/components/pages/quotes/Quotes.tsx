@@ -1,8 +1,10 @@
 import { FC, useState, useEffect } from 'react';
-import axios from 'axios';
+import { useNavigate } from 'react-router';
 
 import { useAppDispatch, useAppSelector } from '../../../hooks/useRedux';
-import { fetchQuotes, getQuotes } from '../../../redux/slice/quotesSlice';
+import { fetchQuotes, getQuotes, quotesStatus } from '../../../redux/slice/quotes.slice';
+
+import QuotesTable from '../../ui/quotes-table/QuotesTable';
 
 import styles from './Quotes.module.scss';
 
@@ -12,22 +14,37 @@ type props = {
 
 const Quotes: FC<props> = ({ setActivePage }) => {
    const quotes = useAppSelector(getQuotes);
+   const status = useAppSelector(quotesStatus);
    const dispatch = useAppDispatch();
 
-   useEffect(() => {
-      dispatch(fetchQuotes());
-   }, []);
+   const navigate = useNavigate();
 
-   if (quotes.length === 0) return <>loading</>
+   const [refresh, setRefresh] = useState(false);
+
+   useEffect(() => {
+      if (!refresh) {
+         dispatch(fetchQuotes());
+         setRefresh(true);
+      }
+   }, [refresh]);
+
+   setTimeout(() => {
+      setRefresh(false);
+   }, 25000);
+
+   if (!quotes) return <h2 className={styles.loading}>загрузка...</h2>;
+
+   if (status === 'error') {
+      navigate('/');
+      alert('произошла ошибка, попробуйте позже');
+   }
 
    return (
       <>
-         <h1>Quotes</h1>
-         {
-            quotes.map((quote, index) => (
-               <span key={index}>{quote?.currency}</span>
-            )) 
-         }
+         <h1>страница котировок с биржи</h1>
+         <div className={styles.container}>
+            <QuotesTable array={quotes} />
+         </div>
       </>
    );
 };

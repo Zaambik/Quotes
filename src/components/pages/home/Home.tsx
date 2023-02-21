@@ -11,7 +11,7 @@ type props = {
 const Home: FC<props> = ({ setActivePage }) => {
    return (
       <>
-         <h1>Home</h1>
+         <h1>главная страница приложения</h1>
          <div className={styles.container}>
             <section className={styles.text}>
                <h2>Здесь реализуются Ваши торговые идеи!</h2>
@@ -20,7 +20,7 @@ const Home: FC<props> = ({ setActivePage }) => {
                </p>
                <Link to='/quotes'>Начать</Link>
             </section>
-            <section className={styles.img}>
+            <section className={styles.info}>
                <img src={mainImg} alt="фоновая картинка с изображением графиков и экономическийх моделей" />
             </section>
          </div>
