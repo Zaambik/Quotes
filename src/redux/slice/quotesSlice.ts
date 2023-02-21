@@ -2,23 +2,25 @@ import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit';
 import axios from 'axios';
 import { RootState } from '../store';
 
-
-
 interface IQuotes {
-   quotes: any;
+   quotes: [];
    status: 'loading' | 'success' | 'error';
 }
 
 export const fetchQuotes = createAsyncThunk('quotes/fetchQuotes', async () => {
-   // const { data } = await axios.get(`https://poloniex.com/public?command=returnTicker`);
-   // const { data } = await axios.get('https://poloniex.com/public?command=returnTicker', {
-   //    headers: {
-   //       'Access-Control-Allow-Origin': '*',
-   //    },
-   // });
-   // return data;
-});
+   const options = {
+      method: 'GET',
+      url: 'https://yahoo-finance15.p.rapidapi.com/api/yahoo/co/collections/day_losers',
+      params: { start: '0' },
+      headers: {
+         'X-RapidAPI-Key': '9af2b9dddfmshbea5120665c2c33p10b4c4jsnf46a77c0a491',
+         'X-RapidAPI-Host': 'yahoo-finance15.p.rapidapi.com',
+      },
+   };
 
+   const { data } = await axios.request(options);
+   return data.quotes;
+});
 
 const initialState: IQuotes = {
    quotes: [],

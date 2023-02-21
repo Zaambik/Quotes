@@ -1,4 +1,5 @@
 import { FC, useState, useEffect } from 'react';
+import axios from 'axios';
 
 import { useAppDispatch, useAppSelector } from '../../../hooks/useRedux';
 import { fetchQuotes, getQuotes } from '../../../redux/slice/quotesSlice';
@@ -10,19 +11,23 @@ type props = {
 };
 
 const Quotes: FC<props> = ({ setActivePage }) => {
-   const quotes = useAppSelector(getQuotes)
-   const dispatch = useAppDispatch()
+   const quotes = useAppSelector(getQuotes);
+   const dispatch = useAppDispatch();
 
    useEffect(() => {
-      dispatch(fetchQuotes())
-   }, [])
+      dispatch(fetchQuotes());
+   }, []);
+
+   if (quotes.length === 0) return <>loading</>
 
    return (
       <>
          <h1>Quotes</h1>
-         {/* {quotes.map((index) => (
-            <span key={index}>123456</span>
-         ))} */}
+         {
+            quotes.map((quote, index) => (
+               <span key={index}>{quote?.currency}</span>
+            )) 
+         }
       </>
    );
 };
