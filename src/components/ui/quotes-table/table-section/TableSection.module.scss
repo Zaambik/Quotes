@@ -9,6 +9,7 @@
    gap: 20px;
 
    color: rgb(220, 220, 220);
+   border: none;
    background-color: $secondary;
    border-radius: 30px;
    border-bottom-left-radius: 5px;
@@ -16,7 +17,7 @@
    cursor: pointer;
 
    > span {
-      padding: 10px 20px 20px 10px;
+      padding: 10px 20px 10px 20px;
 
       display: flex;
       flex-direction: column;

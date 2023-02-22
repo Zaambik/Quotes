@@ -17,8 +17,7 @@ const Footer: FC = () => {
                <a href="https://github.com/Zaambik/CloudFactory" target="_blank">
                   <img src={iconGitHub} width="40px" />
                </a>
-               {/* TODO: https://telegram */}
-               <a href="#" target="_blank">
+               <a href="https://t.me/BUR_mister" target="_blank">
                   <img src={iconTg} width="40px" />
                </a>
             </span>

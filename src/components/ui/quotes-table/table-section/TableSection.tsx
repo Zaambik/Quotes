@@ -1,4 +1,6 @@
 import { FC } from 'react';
+import { useAppDispatch, useAppSelector } from '../../../../hooks/useRedux';
+import { getModalData, refreshModalData } from '../../../../redux/slice/modal.slice';
 
 import styles from './TableSection.module.scss';
 
@@ -7,13 +9,39 @@ type props = {
    regularMarketPrice: number;
    regularMarketDayHigh: number;
    regularMarketChange: number;
-   setOpenModal: () => void
+   setOpenModal: () => void;
+   regularMarketDayLow: number;
+   timeZone: string;
 };
 
-const TableSection: FC<props> = ({ symbol, regularMarketPrice, regularMarketDayHigh, regularMarketChange, setOpenModal }) => {
+const TableSection: FC<props> = ({
+   symbol,
+   regularMarketPrice,
+   regularMarketDayHigh,
+   regularMarketChange,
+   regularMarketDayLow,
+   timeZone,
+   setOpenModal,
+}) => {
+   const dispatch = useAppDispatch();
+
+   const handleClickModal = () => {
+      setOpenModal();
+      dispatch(
+         refreshModalData({
+            symbol,
+            actualPrice: regularMarketPrice,
+            maxPrice: regularMarketDayHigh,
+            coef: regularMarketChange,
+            minPrice: regularMarketDayLow,
+            timeZone
+         }),
+      );
+   };
+
    return (
       <>
-         <button type="button" className={styles.table__section} onClick={() => setOpenModal()}>
+         <button type="button" className={styles.table__section} onClick={() => handleClickModal()}>
             <span>
                <h3>{symbol}</h3>
             </span>
