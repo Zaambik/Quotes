@@ -14,16 +14,20 @@ const QuotesTable: FC<props> = ({ array, setIsShow, isShow }) => {
    return (
       <>
          <div className={styles.table}>
-            {array.map(({ symbol, regularMarketPrice, regularMarketDayHigh, regularMarketChange }, index) => (
-               <TableSection
-                  key={index}
-                  symbol={symbol}
-                  regularMarketPrice={regularMarketPrice}
-                  regularMarketDayHigh={regularMarketDayHigh}
-                  regularMarketChange={regularMarketChange}
-                  setOpenModal={() => setIsShow()}
-               />
-            ))}
+            {array.map(
+               ({ symbol, regularMarketPrice, regularMarketDayHigh, regularMarketChange, exchangeTimezoneName, regularMarketDayLow }, index) => (
+                  <TableSection
+                     key={index}
+                     symbol={symbol}
+                     regularMarketPrice={regularMarketPrice}
+                     regularMarketDayHigh={regularMarketDayHigh}
+                     regularMarketChange={regularMarketChange}
+                     setOpenModal={() => setIsShow()}
+                     timeZone={exchangeTimezoneName}
+                     regularMarketDayLow={regularMarketDayLow}
+                  />
+               ),
+            )}
          </div>
       </>
    );

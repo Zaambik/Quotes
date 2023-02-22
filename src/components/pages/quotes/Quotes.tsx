@@ -3,11 +3,11 @@ import { useNavigate } from 'react-router';
 
 import { useAppDispatch, useAppSelector } from '../../../hooks/useRedux';
 import { fetchQuotes, getQuotes, quotesStatus, refreshQuotes } from '../../../redux/slice/quotes.slice';
+import { getModalData } from '../../../redux/slice/modal.slice';
 
 import useOutside from '../../../hooks/useOutside';
-
 import QuotesTable from '../../ui/quotes-table/QuotesTable';
-import Modal from '../../ui/modal/Modal';
+
 
 import styles from './Quotes.module.scss';
 
@@ -17,6 +17,7 @@ type props = {};
 const Quotes: FC<props> = ({}) => {
    const quotes = useAppSelector(getQuotes);
    const status = useAppSelector(quotesStatus);
+   const modalData = useAppSelector(getModalData);
    const dispatch = useAppDispatch();
 
    const navigate = useNavigate();
@@ -55,36 +56,32 @@ const Quotes: FC<props> = ({}) => {
                <QuotesTable isShow={isShow} setIsShow={() => setIsShow(!isShow)} array={quotes} />
             </div>
          </div>
-         {isShow && (
+         {isShow && modalData !== null && (
             <div ref={ref} className={styles.modal}>
                <h3>Подробнее</h3>
                <span>
                   <h4>Название</h4>
-                  <p></p>
-               </span>
-               <span>
-                  <h4>Максимальная цена</h4>
-                  <p></p>
+                  <p>{modalData?.symbol}</p>
                </span>
                <span>
                   <h4>Актуальность</h4>
-                  <p></p>
+                  <p>{modalData?.actualPrice}</p>
                </span>
                <span>
                   <h4>Дневной минимум</h4>
-                  <p></p>
+                  <p>{modalData?.minPrice}</p>
                </span>
                <span>
                   <h4>Дневной максимум</h4>
-                  <p></p>
+                  <p>{modalData?.maxPrice}</p>
                </span>
                <span>
                   <h4>Коэффицент</h4>
-                  <p></p>
+                  <p>{modalData?.coef}</p>
                </span>
                <span>
                   <h4>Регион</h4>
-                  <p></p>
+                  <p>{modalData?.timeZone }</p>
                </span>
             </div>
          )}
