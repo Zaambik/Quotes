@@ -1,9 +1,10 @@
+import { IQuote } from '../types/quotes.types';
 import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit';
 import axios from 'axios';
 import { RootState } from '../store';
 
 interface IQuotes {
-   quotes: [];
+   quotes: IQuote[] | null;
    status: 'loading' | 'success' | 'error';
 }
 
@@ -18,12 +19,16 @@ export const fetchQuotes = createAsyncThunk('quotes/fetchQuotes', async () => {
       },
    };
 
-   const { data } = await axios.request(options);
-   return data.quotes;
+   try {
+      const { data } = await axios.request(options);
+      return data.quotes;
+   } catch (error) {
+      console.log(error)
+   }
 });
 
 const initialState: IQuotes = {
-   quotes: [],
+   quotes: null,
    status: 'loading', // loading | success | error
 };
 
@@ -38,7 +43,7 @@ export const quotesSlice = createSlice({
    extraReducers: (builder) => {
       builder.addCase(fetchQuotes.pending, (state) => {
          state.status = 'loading';
-         state.quotes = [];
+         state.quotes = null;
       });
       builder.addCase(fetchQuotes.fulfilled, (state, action) => {
          state.status = 'success';
@@ -46,7 +51,7 @@ export const quotesSlice = createSlice({
       });
       builder.addCase(fetchQuotes.rejected, (state) => {
          state.status = 'error';
-         state.quotes = [];
+         state.quotes = null;
       });
    },
 });

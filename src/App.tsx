@@ -23,7 +23,7 @@ const App: FC = () => {
                <Routes>
                   <Route path="/" element={<Home setActivePage={(page) => setActivePage(page)} />} />
                   <Route path="/quotes" element={<Quotes setActivePage={(page) => setActivePage(page)} />} />
-                  <Route path="*" element={<>page not found</>} />
+                  <Route path="*" element={<h2>page not found</h2>} />
                </Routes>
             </main>
 

@@ -1,6 +1,7 @@
 @import '../../../assets/_variables';
 
 .container {
+   position: relative;
    margin: 0 auto;
    max-width: 1000px;
 
@@ -47,7 +48,7 @@
       }
    }
 
-   .img {
+   .info {
       padding-top: 20px;
       padding-bottom: 40px;
       display: grid;

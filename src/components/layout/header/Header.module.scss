@@ -24,6 +24,27 @@ header {
          align-items: center;
 
          background-color: #282c34;
+         border-top-right-radius: 15px;
+         border-top-left-radius: 15px;
+
+         .bg div {
+            display:inline-block;
+            border-radius: 10px;
+            background: black;
+            width:50px;
+            text-align: center;
+            color:red
+         }
+
+         .bg div.select {
+            background: white;
+         }
+
+         .bg {
+            padding: 10px 0;
+            width:150px;
+            background: linear-gradient(to top, white 50%, black 50%)
+         }
 
          h2 {
             // background: linear-gradient(to right, $third, rgb(255, 255, 255));
