@@ -10,6 +10,7 @@
    height: 100%;
 
    .wrapper {
+      padding: 0 2%;
       margin: 40px auto;
       max-width: 1000px;
 
@@ -26,8 +27,8 @@
 
 .modal {
    position: fixed;
-   top: calc(50% - 150px);
-   left: calc(50% - 300px);
+   top: calc(50% - 116px);
+   left: calc(50% - 316px);
 
    padding: 15px;
    width: 600px;
@@ -40,6 +41,17 @@
 
    border: 2px solid $secondary;
    background-color: rgb(44, 48, 55);
+
+   > button {
+      position: absolute;
+      top: 1%;
+      left: 94%;
+
+      background: none;
+      border: none;
+
+      cursor: pointer;
+   }
 
    > h3 {
       margin-top: 10px;
@@ -72,7 +84,97 @@
          color: rgb(220, 220, 220);
          font-size: 18px;
       }
-
    }
 
+   @media screen and (max-width: 700px) {
+      top: calc(50% - 136px);
+      left: calc(50% - 261px);
+
+      padding: 10px;
+      width: 500px;
+      height: 250px;
+
+      border-radius: 15px;
+
+      h3 {
+         font-size: 18px;
+      }
+      
+      > span > h4 {
+         font-size: 16px;
+      }
+
+      > span > p {
+         font-size: 16px;
+      }
+   }
+
+   @media screen and (max-width: 550px) {
+      top: calc(50% - 133px);
+      left: calc(50% - 208px);
+
+      padding: 7px;
+      width: 400px;
+      height: 250px;
+
+      border-radius: 12px;
+
+      > button {
+         left: 92%;
+      }
+
+      h3 {
+         font-size: 16px;
+      }
+      
+      > span > h4 {
+         font-size: 14px;
+      }
+
+      > span > p {
+         font-size: 14px;
+      }
+   }
+
+   @media screen and (max-width: 450px) {
+      top: calc(50% - 129px);
+      left: calc(50% - 159px);
+
+      padding: 3px;
+      width: 310px;
+      height: 250px;
+
+      border-radius: 8px;
+
+      > button {
+         left: 90%;
+      }
+
+      h3 {
+         font-size: 14px;
+      }
+      
+      > span > h4 {
+         font-size: 12px;
+      }
+
+      > span > p {
+         font-size: 12px;
+      }
+   }
+
+      @media screen and (max-width: 340px) {
+      top: calc(50% - 129px);
+      left: calc(50% - 139px);
+
+      padding: 3px;
+      width: 270px;
+      height: 250px;
+
+      border-radius: 5px;
+
+      > button {
+         left: 88%;
+      }
+   }
 }

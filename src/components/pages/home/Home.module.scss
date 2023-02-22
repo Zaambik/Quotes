@@ -3,6 +3,7 @@
 .container {
    position: relative;
    margin: 0 auto;
+   padding: 0 2%;
 
    max-width: 1000px;
    min-height: 100vh;
@@ -22,6 +23,7 @@
       h2 {
          color: white;
          font-size: 26px;
+         text-align: center;
       }
 
       p {
@@ -51,9 +53,23 @@
             background-color: $third-hover;
          }
       }
+
+      @media screen and (max-width: 600px) {
+         h2 {
+            font-size: 18px;
+         }
+
+         p {
+            font-size: 14px;
+         }
+
+         a {
+            font-size: 14px;
+         }
+      }
    }
 
-   .info {
+   .img {
       padding-top: 20px;
       padding-bottom: 40px;
       display: grid;
@@ -63,8 +79,11 @@
 
       img {
          width: 70%;
-         border-radius: 50px;
-         filter: grayscale(100%);
+         border-radius: 30px;
+
+         @media screen and (max-width: 600px) {
+            border-radius: 20px;
+         }
       }
    }
 }

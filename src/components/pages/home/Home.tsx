@@ -1,4 +1,4 @@
-import { FC, useState, useEffect } from 'react';
+import { FC, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 import styles from './Home.module.scss';
@@ -7,23 +7,26 @@ import mainImg from './imgs/main.png';
 type props = {};
 
 const Home: FC<props> = ({}) => {
+   useEffect(() => {
+      window.scrollTo(0, 0);
+   }, []);
+
    return (
       <>
          <h1>главная страница приложения</h1>
          <div className={styles.container}>
             <section className={styles.text}>
-               <h2>Здесь реализуются Ваши торговые идеи!</h2>
+               <h2>Здесь реализуются Ваши торговые амбиции!</h2>
                <p>
-                  Присоединяйтесь к самой умной котировочной системе современности <br /> Нам доверяют миллионы!
+                  Присоединяйтесь к нашей умной котировочной системе, адаптированной к любым запросам будущего! <br />
+                  Докажи, что готов стать лучшим, вместе с нами <br />
+                  Нам доверяют миллионы!
                </p>
                <Link to="/quotes">Начать</Link>
-               <section className={styles.info}>
+               <div className={styles.img}>
                   <img src={mainImg} alt="фоновая картинка с изображением графиков и экономическийх моделей" />
-               </section>
+               </div>
             </section>
-            {/* <section className={styles.info}>
-               <img src={mainImg} alt="фоновая картинка с изображением графиков и экономическийх моделей" />
-            </section> */}
          </div>
       </>
    );

@@ -1,6 +1,6 @@
 import { FC } from 'react';
-import { useAppDispatch, useAppSelector } from '../../../../hooks/useRedux';
-import { getModalData, refreshModalData } from '../../../../redux/slice/modal.slice';
+import { useAppDispatch } from '../../../../hooks/useRedux';
+import { refreshModalData } from '../../../../redux/slice/modal.slice';
 
 import styles from './TableSection.module.scss';
 

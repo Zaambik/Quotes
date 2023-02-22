@@ -6,6 +6,7 @@ header {
 
    .container {
       margin: 0 auto;
+      padding: 0 2%;
       max-width: 1000px;
       height: 100%;
 
@@ -36,33 +37,58 @@ header {
             color: $third;
          }
       }
-   }
 
-   nav {
-      ul {
-         padding: none;
+      nav {
+         ul {
+            margin: 0;
+            padding: 0;
 
-         display: flex;
-         align-items: center;
-         gap: 50%; 
+            display: flex;
+            align-items: center;
+            gap: 50%; 
 
-         list-style: none;
+            list-style: none;
 
-         li {
-            padding-bottom: 5px;
-            transition: all 0.2s ease-in-out;
-            border-bottom: 2px solid rgba(255, 255, 255, 0);
+            li {
+               padding-bottom: 5px;
+               transition: all 0.2s ease-in-out;
+               border-bottom: 2px solid rgba(255, 255, 255, 0);
 
-            a {
-               font-size: 16px;
-               color: rgb(255, 255, 255);
-               text-decoration: none;
+               a {
+                  font-size: 16px;
+                  color: rgb(255, 255, 255);
+                  text-decoration: none;
+               }
+            }
+
+            .activePage {
+               transition: all 0.2s ease-in-out;
+               border-bottom: 2px solid $third;
             }
          }
+      }
+   }
 
-         .activePage {
-            transition: all 0.2s ease-in-out;
-            border-bottom: 2px solid $third;
+   @media screen and (max-width: 500px) {
+      padding: 25px 0;
+      height: auto;
+
+      .container {
+         flex-direction: column;
+         justify-content: center;
+
+         nav {
+            margin-top: 25px;
+
+            ul {
+               flex-direction: column;
+               justify-content: center;
+               gap: 40px;
+
+               a {
+                  padding: 20px;
+               }
+            }
          }
       }
    }
