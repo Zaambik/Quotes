@@ -18,12 +18,29 @@ footer {
 }
 
 h1 {
-   display: none;
+   visibility: hidden;
 }
 
 button {
    border: 1px solid black;
 }
 
+h2, h3, h4, p, img, a {
+   animation-name: appearance;
+   animation-duration: 0.7s;
+   animation-iteration-count: 1;
+}
+
+@keyframes appearance {
+   0% {
+      opacity: 0;
+   }
+   80% {
+      opacity: 0.5;
+   }
+   100% {
+      opacity: 1;
+   }
+}
 
 

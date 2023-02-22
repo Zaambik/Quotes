@@ -24,8 +24,12 @@ const Footer: FC = () => {
             <span className={styles.contacts}>
                <h3>Контакты</h3>
                <ul>
-                  <li> +7(965) 377-44-87</li>
-                  <li> +7(977) 171-07-74</li>
+                  <li>
+                     <a href="tel:+79653774487">+7(965) 377-44-87</a>
+                  </li>
+                  <li>
+                     <a href="tel:+79771710774">+7(977) 171-07-74</a>
+                  </li>
                </ul>
             </span>
          </div>

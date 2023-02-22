@@ -57,7 +57,21 @@ footer {
                &:first-child {
                   margin-top: 0;
                }
+
+               a {
+                  text-decoration: none;
+                  color: rgb(220, 220, 220)
+               }
             }
+         }
+      }
+
+      @media screen and (max-width: 800px) {
+         grid-template-columns: 1fr;
+         gap: 20px;
+
+         > .about > p {
+            text-align: center;
          }
       }
    }

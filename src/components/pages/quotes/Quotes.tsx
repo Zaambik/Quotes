@@ -1,16 +1,15 @@
-import { FC, useState, useEffect, useRef } from 'react';
+import { FC, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router';
 
 import { useAppDispatch, useAppSelector } from '../../../hooks/useRedux';
-import { fetchQuotes, getQuotes, quotesStatus, refreshQuotes } from '../../../redux/slice/quotes.slice';
+import { fetchQuotes, getQuotes, quotesStatus } from '../../../redux/slice/quotes.slice';
 import { getModalData } from '../../../redux/slice/modal.slice';
 
 import useOutside from '../../../hooks/useOutside';
 import QuotesTable from '../../ui/quotes-table/QuotesTable';
 
-
 import styles from './Quotes.module.scss';
-
+import closeImg from './imgs/close.svg'
 
 type props = {};
 
@@ -26,6 +25,7 @@ const Quotes: FC<props> = ({}) => {
    const { ref, isShow, setIsShow } = useOutside(false);
 
    useEffect(() => {
+      window.scrollTo(0, 0);
       const refreshData = () => {
          if (onPage.current) {
             dispatch(fetchQuotes());
@@ -58,6 +58,9 @@ const Quotes: FC<props> = ({}) => {
          </div>
          {isShow && modalData !== null && (
             <div ref={ref} className={styles.modal}>
+               <button type="button" onClick={() => setIsShow(!isShow)}>
+                  <img src={closeImg} />
+               </button>
                <h3>Подробнее</h3>
                <span>
                   <h4>Название</h4>
@@ -81,7 +84,7 @@ const Quotes: FC<props> = ({}) => {
                </span>
                <span>
                   <h4>Регион</h4>
-                  <p>{modalData?.timeZone }</p>
+                  <p>{modalData?.timeZone}</p>
                </span>
             </div>
          )}
