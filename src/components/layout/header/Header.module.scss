@@ -14,36 +14,21 @@ header {
       gap: 10%;
 
       .logo {
-         padding: 0 2% 0 2%;
-         height: 100%;
+         a {
+            padding: 5px 15px;
+            height: 40px;
 
-         display: flex;
-    
-         text-align: center;
-         justify-content: center;
-         align-items: center;
-
-         background-color: #282c34;
-         border-top-right-radius: 15px;
-         border-top-left-radius: 15px;
-
-         .bg div {
-            display:inline-block;
-            border-radius: 10px;
-            background: black;
-            width:50px;
+            display: flex;
+      
             text-align: center;
-            color:red
-         }
+            justify-content: center;
+            align-items: center;
 
-         .bg div.select {
-            background: white;
-         }
-
-         .bg {
-            padding: 10px 0;
-            width:150px;
-            background: linear-gradient(to top, white 50%, black 50%)
+            background-color: rgb(244, 244, 244);
+            border-radius: 25px;
+            border-top-right-radius: 5px;
+            border-bottom-left-radius: 5px;
+            text-decoration: none;
          }
 
          h2 {
@@ -64,11 +49,20 @@ header {
          list-style: none;
 
          li {
+            padding-bottom: 5px;
+            transition: all 0.2s ease-in-out;
+            border-bottom: 2px solid rgba(255, 255, 255, 0);
+
             a {
                font-size: 16px;
                color: rgb(255, 255, 255);
                text-decoration: none;
             }
+         }
+
+         .activePage {
+            transition: all 0.2s ease-in-out;
+            border-bottom: 2px solid $third;
          }
       }
    }

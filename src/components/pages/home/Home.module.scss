@@ -3,13 +3,17 @@
 .container {
    position: relative;
    margin: 0 auto;
+
    max-width: 1000px;
+   min-height: 100vh;
 
    display: grid;
    grid-template-columns: 1fr;
+   align-items: center;
 
    .text {
       padding-top: 40px;
+
       display: grid;
       grid-template-columns: 1fr;
       justify-items: center;
@@ -23,6 +27,7 @@
       p {
          color: white;
          font-size: 20px;
+         text-align: center;
       }
 
       a {

@@ -22,7 +22,7 @@ const useOutside = (initialIsVisible: boolean): TypeOut => {
       return () => {
          document.removeEventListener('click', handleClickOutside, true)
       }
-   })
+   }, [])
 
    return { ref, isShow, setIsShow}
 }

@@ -9,9 +9,11 @@ footer {
       margin: 0 auto;
       max-width: 1000px;
 
-      display: flex;
-      justify-content: space-between;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
       align-items: center;
+      justify-items: center;
+
 
       .about {
          display: flex;
@@ -20,11 +22,18 @@ footer {
 
          h3 {
             color: $third;
+            text-align: center;
          }
 
          p {
             color: rgb(255, 255, 255);
          }
+      }
+
+      .links {
+         justify-self: center;
+         display: flex;
+         gap: 20px;
       }
 
       .contacts {
@@ -34,6 +43,7 @@ footer {
 
          h3 {
             color: $third;
+            text-align: center;
          }
 
          ul {

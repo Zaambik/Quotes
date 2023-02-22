@@ -12,23 +12,20 @@ import './App.css';
 
 
 const App: FC = () => {
-   const [activePage, setActivePage] = useState<string>('');
 
    return (
       <AppContext.Provider value>
-         <div className="App">
-            <Header activePage={activePage} />
+         <Header />
 
-            <main>
-               <Routes>
-                  <Route path="/" element={<Home setActivePage={(page) => setActivePage(page)} />} />
-                  <Route path="/quotes" element={<Quotes setActivePage={(page) => setActivePage(page)} />} />
-                  <Route path="*" element={<h2>page not found</h2>} />
-               </Routes>
-            </main>
+         <main>
+            <Routes>
+               <Route path="/" element={<Home />} />
+               <Route path="/quotes" element={<Quotes  />} />
+               <Route path="*" element={<h2>page not found</h2>} />
+            </Routes>
+         </main>
 
-            <Footer />
-         </div>
+         <Footer />
       </AppContext.Provider>
    );
 };
