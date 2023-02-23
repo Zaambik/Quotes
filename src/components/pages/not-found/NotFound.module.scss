@@ -1,9 +1,20 @@
 @import '../../../assets/variables';
 
 .head {
-   margin: 50px;
+   width: 60%;
 
+
+   margin: 300px;
+
+   display: flex;
    text-align: center;
-   font-size: 20px;
+   justify-content: center;
+   align-items: center;
+
    color: $third;
+   background-color: rgb(50, 65, 104);
+
+   border-radius: 30px;
+
+   font-size: 40px;
 }

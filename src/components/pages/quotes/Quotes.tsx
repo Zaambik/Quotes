@@ -41,17 +41,17 @@ const Quotes: FC = () => {
       };
    }, [onPage.current]);
 
-   if (!quotes) return <h2 className={styles.loading}>загрузка...</h2>;
+   if (!quotes) return <h2 className={styles.loading}>Загрузка...</h2>;
 
    if (status === 'error') {
       navigate('/');
-      alert('произошла ошибка, попробуйте позже');
+      alert('Произошла ошибка, попробуйте позже');
    }
 
    return (
       <>
          <div className={styles.container}>
-            <h1>страница котировок с биржи</h1>
+            <h1>Страница котировок с биржи</h1>
             <div className={styles.wrapper}>
                <h2>Таблица котировок</h2>
                <QuotesTable isShow={isShow} setIsShow={() => setIsShow(!isShow)} array={quotes} />

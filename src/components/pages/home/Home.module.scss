@@ -80,6 +80,7 @@
       img {
          width: 70%;
          border-radius: 30px;
+         box-shadow: 0 0 20px 1px;
 
          @media screen and (max-width: 600px) {
             border-radius: 20px;

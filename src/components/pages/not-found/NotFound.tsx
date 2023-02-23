@@ -10,7 +10,7 @@ const NotFound: FC = () => {
 
    return (
       <>
-         <h2 className={styles.head}>404 Страница не найдена 🤷‍♂️</h2>
+         <h2 className={styles.head}>👾 404 Страница не найдена {':('} 👾</h2>
       </>
    );
 };

@@ -13,7 +13,7 @@ const Home: FC = () => {
 
    return (
       <>
-         <h1>главная страница приложения</h1>
+         <h1>Главная страница приложения</h1>
          <div className={styles.container}>
             <section className={styles.text}>
                <h2>Здесь реализуются Ваши торговые амбиции!</h2>
