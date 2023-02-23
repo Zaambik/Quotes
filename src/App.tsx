@@ -7,12 +7,11 @@ import Header from './components/layout/header/Header';
 import Home from './components/pages/home/Home';
 import Footer from './components/layout/footer/Footer';
 import Quotes from './components/pages/quotes/Quotes';
+import NotFound from './components/pages/not-found/NotFound';
 
 import './App.css';
 
-
 const App: FC = () => {
-
    return (
       <AppContext.Provider value>
          <Header />
@@ -20,8 +19,8 @@ const App: FC = () => {
          <main>
             <Routes>
                <Route path="/" element={<Home />} />
-               <Route path="/quotes" element={<Quotes  />} />
-               <Route path="*" element={<h2>page not found</h2>} />
+               <Route path="/quotes" element={<Quotes />} />
+               <Route path="*" element={<NotFound />} />
             </Routes>
          </main>
 

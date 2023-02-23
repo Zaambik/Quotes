@@ -4,11 +4,11 @@ import { Link } from 'react-router-dom';
 import styles from './Home.module.scss';
 import mainImg from './imgs/main.png';
 
-type props = {};
 
-const Home: FC<props> = ({}) => {
+const Home: FC = () => {
    useEffect(() => {
       window.scrollTo(0, 0);
+      document.title = 'Главная'
    }, []);
 
    return (
