@@ -17,6 +17,7 @@ https://yahoo-finance15.p.rapidapi.com/api/yahoo/co/collections/day_losers
 Веб-приложение написано с использованием языка TypeScript, фреймворка React, Redux Toolkit на базе node.js. Верстка была выполнена по требованиям доступности и адаптивности к различным экранам устройств. Собирается при помощи инструмента Vite.
 
 ##Команда для запуска приложения:
+
 __npm__
 ``
 npm run dev
