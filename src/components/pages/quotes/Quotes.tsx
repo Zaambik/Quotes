@@ -11,9 +11,8 @@ import QuotesTable from '../../ui/quotes-table/QuotesTable';
 import styles from './Quotes.module.scss';
 import closeImg from './imgs/close.svg'
 
-type props = {};
 
-const Quotes: FC<props> = ({}) => {
+const Quotes: FC = () => {
    const quotes = useAppSelector(getQuotes);
    const status = useAppSelector(quotesStatus);
    const modalData = useAppSelector(getModalData);
@@ -26,6 +25,8 @@ const Quotes: FC<props> = ({}) => {
 
    useEffect(() => {
       window.scrollTo(0, 0);
+      document.title = 'Котировки';
+
       const refreshData = () => {
          if (onPage.current) {
             dispatch(fetchQuotes());
