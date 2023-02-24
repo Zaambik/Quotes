@@ -22,6 +22,17 @@
          
          color: rgb(255, 255, 255);
       }
+
+      button:hover {
+         color: rgb(130, 215, 255);
+         background-color: #000000;
+         scale: 1.009;
+         transition: 0.2s;
+      }
+
+      button:not(hover) {
+         transition: 0.2s;
+      }
    }
 }
 
@@ -34,13 +45,15 @@
    width: 600px;
    height: 300px;
 
+   opacity: 95%;
+
    display: grid;
    grid-template-columns: 1fr;
 
    border-radius: 20px;
 
-   border: 2px solid $secondary;
-   background-color: rgb(44, 48, 55);
+   border: 2px solid rgb(255, 255, 255);
+   background-color: $secondary;
 
    > button {
       position: absolute;
@@ -52,6 +65,7 @@
 
       cursor: pointer;
    }
+
 
    > h3 {
       margin-top: 10px;

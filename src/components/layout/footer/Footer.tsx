@@ -14,12 +14,15 @@ const Footer: FC = () => {
                <p>Мы - амбициозная команда разработчиков. Следуем своим целям на пути к самореализации и перспективному развитию!</p>
             </span>
             <span className={styles.links}>
+               <h3>Мы на связи!</h3>
+               <ul>
                <a href="https://github.com/Zaambik/CloudFactory" target="_blank">
                   <img src={iconGitHub} width="40px" />
                </a>
                <a href="https://t.me/BUR_mister" target="_blank">
                   <img src={iconTg} width="40px" />
                </a>
+               </ul>
             </span>
             <span className={styles.contacts}>
                <h3>Контакты</h3>
